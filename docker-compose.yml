@@ -1,0 +1,17 @@
+version: "2"
+services:
+  flexget:
+    image: javi98/flexget
+    container_name: flexget
+    ports:
+      - 5050:5050
+    environment:
+      - TORRENT_PLUGIN=transmission
+      - FG_WEBUI_PASSWD=Laravel5.7-aSuS
+    volumes:
+      - ./flexget:/config
+      - ./transmission/config/torrents:/home/flexget/torrents
+      - ./transmission/downloads/complete:/downloads
+    links:
+      - transmission
+    restart: always
