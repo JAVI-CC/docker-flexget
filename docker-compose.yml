@@ -7,7 +7,7 @@ services:
       - 5050:5050
     environment:
       - TORRENT_PLUGIN=transmission
-      - FG_WEBUI_PASSWD=Laravel5.7-aSuS
+      - FG_WEBUI_PASSWD=12345678
     volumes:
       - ./flexget:/config
       - ./transmission/config/torrents:/home/flexget/torrents
